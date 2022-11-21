@@ -8,7 +8,7 @@ export default function App() {
     const [token, setToken] = useState(null);
     return (
         <BrowserRouter>
-            <UserContext.Provider value={{ token, setToken }}>
+            <UserContext.Provider value={{token, setToken }}>
                 <GlobalStyle />
                 <AppRoutes />
             </UserContext.Provider>

@@ -3,26 +3,27 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function Cadastro() {
-    const [user, setUser] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState()
-    const [confirm, setConfirm] = useState()
-    const nav = useNavigate();
+export default function SignUp() {
+    const [user, setUser] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState();
+    const [confirmpassword, setConfirmpassword] = useState ();
+    const navegar = useNavigate();
     const API = "http://localhost:5000/sign-up"
+
     function ValidateSignUp(event) {
         event.preventDefault()
-        if (password === confirm){
+        if (password === confirmpassword) {
             const userinfo = {
                 name: user,
                 email: email,
                 password: password
             }
-            const promise = axios.post (API, userinfo);
-            promise.then(()=>nav("/"));
-            promise.catch((error)=>console.log(error));
+            const promise = axios.post(API, userinfo);
+            promise.then(() => navegar("/"));
+            promise.catch((error) => alert(error));
         } else {
-            alert ("As senhas digitadas não coincidem. Tente novamente.")
+            alert("As senhas digitadas não coincidem. Tente novamente.")
         }
 
     }
@@ -34,7 +35,7 @@ export default function Cadastro() {
             <Field>
                 <input
                     placeholder="Nome"
-                    onChange={(e) => setUser(e.target.value)}
+                    onChange={(e)=>setUser(e.target.value)}
                     type="name"
                     required
                 />
@@ -42,7 +43,7 @@ export default function Cadastro() {
             <Field>
                 <input
                     placeholder="E-mail"
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e)=>setEmail(e.target.value)}
                     type="email"
                     required
                 />
@@ -50,7 +51,7 @@ export default function Cadastro() {
             <Field>
                 <input
                     placeholder="Senha"
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e)=>setPassword(e.target.value)}
                     type="password"
                     required
                 />
@@ -58,12 +59,12 @@ export default function Cadastro() {
             <Field>
                 <input
                     placeholder="Confirme a senha"
-                    onChange={(e) => setConfirm(e.target.value)}
-                    type="confirm"
+                    onChange={(e)=>setConfirmpassword(e.target.value)}
+                    type="password"
                     required
                 />
             </Field>
-            <Register><h3>Cadastrar</h3></Register>
+            <Register type="submit"><h3>Cadastrar</h3></Register>
             <SignIn>
                 <Link
                     to="/"
@@ -95,7 +96,7 @@ const FormSignUp = styled.form`
     flex-direction: column;
     background: #8C11BE;
 `
-const Field = styled.input`
+const Field = styled.div`
     input{
         width: 326px;
         height: 58px;
@@ -117,7 +118,7 @@ const Field = styled.input`
     }
 `
 
-const Register = styled.div`
+const Register = styled.button`
     width: 326px;
     height: 46px;
     background: #A328D6;
@@ -127,9 +128,8 @@ const Register = styled.div`
     align-items: center;
     margin-bottom:36px;
     border:none;
+    cursor:pointer;
     h3{
-        width: 59px;
-        height: 23px;
         font-family: 'Raleway';
         font-style: normal;
         font-weight: 700;

@@ -8,16 +8,18 @@ export default function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const nav = useNavigate();
-    const {setToken} = useContext(UserContext);
-    function ValidateLogin(event){
+    const { setToken } = useContext(UserContext);
+
+    
+    function ValidateLogin(event) {
         event.preventDefault();
-        const API="http://localhost:5000/"
-        const request = axios.post(API,{email, password})
-        request.then((res)=>{
+        const API = "http://localhost:5000/sign-in"
+        const request = axios.post(API, { email, password })
+        request.then((res) => {
             nav("/home")
             setToken(res.data)
         })
-        request.catch(()=>{
+        request.catch(() => {
             alert("Informações de login inválidas. Verifique novamente")
             setEmail("")
             setPassword("");
@@ -50,7 +52,8 @@ export default function SignIn() {
             <Enter>
                 <Link
                     to="/sign-up"
-                    style={{ textDecoration: 'none' }}>
+                    style={{ textDecoration: 'none' }}
+                >
                     <h3>Primeira vez? Cadastre-se!</h3>
                 </Link>
             </Enter>
