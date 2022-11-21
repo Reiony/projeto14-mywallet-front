@@ -10,8 +10,8 @@ export default function AppRoutes() {
             <Route path='/' element={<SignIn/> } />
             <Route path='/sign-up' element={<SignUp/>} />
             <Route path='/home' element={<Home/>} />
-            {/* <Route path='/cash-in' element={<CashIn/>} />
-            <Route path='/cash-out' element={<CashOut/>} /> */}
+            <Route path='/cash-in' element={<CashIn/>} />
+            <Route path='/cash-out' element={<CashOut/>} />
         </Routes>
     )
 }

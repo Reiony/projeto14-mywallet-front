@@ -11,19 +11,24 @@ export default function SignIn() {
     const { setToken } = useContext(UserContext);
 
     
-    function ValidateLogin(event) {
-        event.preventDefault();
+    function ValidateAll() {
         const API = "http://localhost:5000/sign-in"
         const request = axios.post(API, { email, password })
         request.then((res) => {
             nav("/home")
-            setToken(res.data)
+            /* setToken(res.data) */
+            console.log(res.data)
+            localStorage.setItem("user",JSON.stringify(res.data))
         })
         request.catch(() => {
             alert("Informações de login inválidas. Verifique novamente")
             setEmail("")
             setPassword("");
         })
+    }
+    function ValidateLogin(event){
+        event.preventDefault();
+        ValidateAll();
     }
     return (
         <LoginContainer onSubmit={ValidateLogin}>
