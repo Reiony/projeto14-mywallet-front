@@ -53,10 +53,10 @@ table {
     box-sizing: border-box;
 }
 
-body{
+/* body{
     font-family: "Raleway", sans-serif;
     width: 100%;
     background-color: #8C11BE;
     color: #ffffff;
-}
+} */
 `
