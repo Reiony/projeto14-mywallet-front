@@ -36,8 +36,8 @@ export default function SignUp() {
         ></Input>
         <Input
           placeholder="Digite seu e-mail"
-          name="name"
-          type="text"
+          name="email"
+          type="email"
           onChange={(e) => {
             handleForm({ name: e.target.name, value: e.target.value });
           }}
@@ -62,7 +62,7 @@ export default function SignUp() {
           <h3> Cadastrar </h3>
         </Register>
         <SignIn>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/sign-in" style={{ textDecoration: "none" }}>
             <h3>Já tem uma conta? entre agora!</h3>
           </Link>
         </SignIn>

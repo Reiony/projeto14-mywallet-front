@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { AuthContext } from "../contexts/AuthContext";
-import { SignInPost } from "../services/AxiosAuth";
+import { AuthContext } from "../contexts/AuthContext.js";
+import { SignInPost } from "../services/AxiosAuth.js";
 
 export default function SignIn() {
   const [form, setForm] = useState({});
@@ -12,8 +12,8 @@ export default function SignIn() {
   function ValidateForm(e) {
     e.preventDefault();
     SignInPost(form).then((res) => {
-      setToken(res.data.token);
       nav("/");
+      setToken(res.data.token)
     });
   }
 
@@ -25,30 +25,28 @@ export default function SignIn() {
   }
   return (
     <Form>
-      <Title>
-        MyWallet
-      </Title>
+      <Title>MyWallet</Title>
       <Field
         placeholder="E-mail"
+        name="email"
+        type="email"
         onChange={(e) =>
           handleForm({
             name: e.target.name,
             value: e.target.value,
           })
         }
-        type="email"
-        required
       ></Field>
       <Field
         placeholder="Senha"
+        name="password"
+        type="password"
         onChange={(e) =>
           handleForm({
             name: e.target.name,
             value: e.target.value,
           })
         }
-        type="password"
-        required
       ></Field>
       <Login onClick={ValidateForm}>
         <h3>Entrar</h3>
@@ -85,23 +83,23 @@ const Form = styled.form`
 `;
 
 const Field = styled.input`
-    width: 326px;
-    height: 58px;
-    background: #ffffff;
-    padding-left: 15px;
-    border-radius: 5px;
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    border: none;
-    display: flex;
-    align-items: center;
-    margin-bottom: 13px;
-    ::placeholder {
-      color: black;
-    }
+  width: 326px;
+  height: 58px;
+  background: #ffffff;
+  padding-left: 15px;
+  border-radius: 5px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+  ::placeholder {
+    color: black;
+  }
 `;
 
 const Login = styled.button`

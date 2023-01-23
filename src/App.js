@@ -9,9 +9,9 @@ export default function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/home" element={<Home />}/> */}
+          {/* <Route path="/" element={<Home />}/> */}
           <Route path="sign-up" element={<SignUp/>}/>
-          <Route path="/" element={<SignIn/>}/>
+          <Route path="/sign-in" element={<SignIn/>}/>
         </Routes>
       </BrowserRouter>
     </>
