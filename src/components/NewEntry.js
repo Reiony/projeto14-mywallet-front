@@ -16,7 +16,6 @@ export default function NewEntry() {
       [name]: value,
       type: "entry",
     });
-    console.log(form)
   }
 
   function saveTransaction(e) {
