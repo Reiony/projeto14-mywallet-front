@@ -13,6 +13,7 @@ export default function SignIn() {
     e.preventDefault();
     SignInPost(form).then((res) => {
       nav("/");
+      /* console.log(res.data.token) */
       setToken(res.data.token)
     });
   }
