@@ -2,13 +2,6 @@
 
 Um gerenciador de gastos digital para controle financeiro pessoal.
 
-<div style="display: flex; gap: 10px; align-items: center">
-
-</div>
-
-Você pode acessar o projeto no [link](https://mywallet-tau.vercel.app/). Fique a vontade para conferir e testar as funcionalidades.
-
-
 ## Sobre
 
 MyWallet é uma aplicação que permite ao usuario gerenciar gastos de maneira personalizada.
