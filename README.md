@@ -28,7 +28,7 @@ O MyWallet foi criado com o intuito pessoal de gerenciar gastos de maneira simpl
 
 ## Como iniciar o projeto
 
-- ATENÇÂO. Este projeto é o Front-End de um projeto completo. Para baixar e ver as instruções para o Back-End deste projeto [clique aqui](https://github.com/Matheus-Rodrigues-EC/MyWallet-Node) para acessar o repositório.
+- ATENÇÂO. Este projeto é o Front-End de um projeto completo. Para baixar e ver as instruções para o Back-end deste projeto [clique aqui](https://github.com/Reiony/projeto14-mywallet-back) para acessar o repositório.
 
 1. Clone o repositório
 2. Instale todas as dependências
