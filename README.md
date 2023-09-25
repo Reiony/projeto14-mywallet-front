@@ -2,7 +2,7 @@
 
 Um gerenciador de gastos digital para controle financeiro pessoal.
 <div align="center">
-  <img src="https://github.com/Reiony/projeto14-mywallet-front/assets/107890604/355b7a6f-4a2d-4ad2-bf49-445283c461c4" alt="Descrição da imagem" width="100%">
+  <img src="https://github.com/Reiony/projeto14-mywallet-front/assets/107890604/355b7a6f-4a2d-4ad2-bf49-445283c461c4" alt="Descrição da imagem" width="250px">
 </div>
 
 
